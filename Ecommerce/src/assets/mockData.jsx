@@ -1,0 +1,62 @@
+import Image1 from "./Images/hero-image.jpg"
+
+export const catagories=[
+    "Electronics",
+    "Grocery",
+    "Fashion",
+    "Healthcare",
+    "Beauty",
+    "Sports",
+    "Ethinic",
+];
+
+export const mockData =[
+    {
+        id:1,
+        image:Image1,
+        name:"product",
+        price:28.22,
+    },
+    {
+        id:2,
+        image:Image1,
+        name:"product",
+        price:28.22,
+    },
+    {
+        id:3,
+        image:Image1,
+        name:"product",
+        price:28.22,
+    },
+    {
+        id:4,
+        image:Image1,
+        name:"product",
+        price:28.22,
+    },
+    {
+        id:5,
+        image:Image1,
+        name:"product",
+        price:28.22,
+    },
+    {
+        id:6,
+        image:Image1,
+        name:"product",
+        price:28.22,
+    },
+    {
+        id:7,
+        image:Image1,
+        name:"product",
+        price:28.22,
+    },
+    {
+        id:8,
+        image:Image1,
+        name:"product",
+        price:28.22,
+    },
+];
