@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-function Folder({handleInsertNode, explorer}){
+function Folder({handleRenameNode, handleDeleteNode, handleInsertNode, explorer}){
     const [expand, setExpand]= useState(false);
     const [showInput, setShowInput] = useState({
         visible: false,
@@ -23,6 +23,11 @@ function Folder({handleInsertNode, explorer}){
         }
     };
 
+    const handleDelete= (e) =>{
+        e.stopPropagation();
+        handleDeleteNode(explorer.id);
+    }
+
     if(explorer.isFolder){
         return(
         <div style={{marginTop:5}}>
@@ -31,6 +36,11 @@ function Folder({handleInsertNode, explorer}){
                     📁{explorer.name}
                 </span>
                 <span>
+                    <button onClick={handleRenameNode
+
+                        
+                    }>Rename</button>
+                    <button onClick={handleDelete}> - delete</button>
                     <button onClick={(e)=> handleNewFolder(e, true)}>+ Folder</button>
                     <button onClick={(e)=> handleNewFolder(e, false)}>+ File</button>
                 </span>
@@ -51,13 +61,16 @@ function Folder({handleInsertNode, explorer}){
                 }
 
                 {explorer.items.map((item)=>{
-                    return <Folder key={item.id} handleInsertNode={handleInsertNode} explorer={item}/>
+                    return <Folder key={item.id} handleRenameNode={handleRenameNode} handleDeleteNode={handleDeleteNode} handleInsertNode={handleInsertNode} explorer={item}/>
                 })}
             </div>
         </div>
         );
     }else{
-        return <span>📄{explorer.name}</span>
+        return <div>
+            <span>📄{explorer.name}</span>
+            <span><button onClick={handleDelete}> - delete</button></span>
+            </div>
     }
 }
 
